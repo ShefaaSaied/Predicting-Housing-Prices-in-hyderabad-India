@@ -1,6 +1,6 @@
 # Predicting-Housing-Prices-in-hyderabad-India
 ![alt text](https://assets-news.housing.com/news/wp-content/uploads/2020/09/03140534/How-Hyderabad-became-the-best-performing-realty-market-amid-a-nationwide-slowdown-FB-1200x700-compressed.jpg)
-- The challenge in this project was to use only linear/polynomial regression models in addition to trying all possible cleaning, scaling, feature engineering, polynomial degrees, and regularization techniques that lead to the highest score.\ 
+- The challenge in this project was to use only linear/polynomial regression models in addition to trying all possible cleaning, scaling, feature engineering, polynomial degrees, and regularization techniques that lead to the highest score.
 
 The dataset used in this project is obtained from [Kaggle - Housing Prices in Metropolitan Areas of India](https://www.kaggle.com/ruchi798/housing-prices-in-metropolitan-areas-of-india)\
 The dataset includes:\
@@ -17,7 +17,7 @@ At first:
 
 ### EDA
 * Count plot for all amenities features shows that some rows have values of 9 in all cells which doesn't make sense and also mentioned in dataset's kaggle page that '9' was used to mark values were nothing was mentioned about certain amenities.\
-So, we can safely drop these records from the data.
+--> So, we can safely drop these records from the data.
 * Box plot shows that that there is some outliers in prices.
 * Histogram of continous features (Price & Area) shows that they have some outliers and also are right skewed.
 
@@ -36,11 +36,9 @@ Finally, drop all amenities columns and keep 'Luxury' column only.
 
 2. I tried dropping 'Location' feature after extracting longitude & latitude as a substitute for it, but, keeping it increases model performance.\
 In the task, CatBoostEncoder() gave the highest performance out of all encoding techniques. 
----
 
 **Note:** CatBoostEncoder() is a target-based categorical encoder but also involves an ordering principle in order to overcome this problem of target leakage.
 
----
 3. Apply log transform to 'Area' for scaling and overcoming the sckewness.
 ![alt text](area_scaled.png "Title")
 
@@ -54,7 +52,7 @@ In the task, CatBoostEncoder() gave the highest performance out of all encoding 
 
 ### Model Training
 As mentioned above, only linear/polynomial regression models can be used in this task, hence, I applied both using cross validation and with different degrees of polynomial features, also with Lasso and Ridge regulariation.\
-This table summarize results obtained:\
+This table summarize results obtained:
 
 |        Model   	    |  Training with CV	|  Testing	|
 |----------------------	|------------------	|----------	|
