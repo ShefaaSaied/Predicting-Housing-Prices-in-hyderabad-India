@@ -3,7 +3,7 @@
 The challenge in this project was to use only linear/polynomial regression models in addition to trying all possible cleaning, scaling, feature engineering, polynomial degrees, and regularization techniques that lead to the highest score.
 
 The dataset used in this project is obtained from [Kaggle - Housing Prices in Metropolitan Areas of India](https://www.kaggle.com/ruchi798/housing-prices-in-metropolitan-areas-of-india)\
-The dataset includes:\
+The dataset includes:
 - Collection of prices of new and resale houses located in the metropolitan areas of India.\
 - The amenities provided for each house.
 
