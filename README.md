@@ -1,13 +1,13 @@
 # Predicting-Housing-Prices-in-hyderabad-India
 ![alt text](https://assets-news.housing.com/news/wp-content/uploads/2020/09/03140534/How-Hyderabad-became-the-best-performing-realty-market-amid-a-nationwide-slowdown-FB-1200x700-compressed.jpg)
-- The challenge in this project was to use only linear/polynomial regression models in addition to trying all possible cleaning, scaling, feature engineering, polynomial degrees, and regularization techniques that lead to the highest score.
+The challenge in this project was to use only linear/polynomial regression models in addition to trying all possible cleaning, scaling, feature engineering, polynomial degrees, and regularization techniques that lead to the highest score.
 
 The dataset used in this project is obtained from [Kaggle - Housing Prices in Metropolitan Areas of India](https://www.kaggle.com/ruchi798/housing-prices-in-metropolitan-areas-of-india)\
 The dataset includes:\
 Collection of prices of new and resale houses located in the metropolitan areas of India.\
 The amenities provided for each house.
 
-- In this project I worked only on 'Hyderabad.csv' 
+**In this project I worked only on 'Hyderabad.csv'.** 
 
 ## Methodology
 At first:
@@ -29,15 +29,14 @@ At first:
     * If ANY of the outdoor luxury features are available --> assign 2
     * If ALL of the indoor & outdoor luxury features are available --> assign 3
 Finally, drop all amenities columns and keep 'Luxury' column only.
-- For code simplicity, feature_eng() function is created to implement feature engineering steps and to be applied directly on the training and testing sets.
+--> For code simplicity, feature_eng() function is created to implement feature engineering steps and to be applied directly on the training and testing sets.
 
 ### Preprocessing
 1. Removing outliers from 'Price' above and below 3.5IQR and from 'Area' by thresholding (keep values <= 6000).
 
 2. I tried dropping 'Location' feature after extracting longitude & latitude as a substitute for it, but, keeping it increases model performance.\
 In the task, CatBoostEncoder() gave the highest performance out of all encoding techniques. 
-
-**Note:** CatBoostEncoder() is a target-based categorical encoder but also involves an ordering principle in order to overcome this problem of target leakage.
+    **Note:** CatBoostEncoder() is a target-based categorical encoder but also involves an ordering principle in order to overcome this problem of target leakage.
 
 3. Apply log transform to 'Area' for scaling and overcoming the sckewness.
 ![alt text](area_scaled.png "Title")
@@ -46,7 +45,7 @@ In the task, CatBoostEncoder() gave the highest performance out of all encoding 
 (to obtain actual predicted prices, apply np.expm1() on the predicted values)
 ![alt text](price_scaled.png "Title")
 
-- we can see how the log transformation perfectly overcame the sckewness in both features.
+- We can see how the log transformation perfectly overcame the sckewness in both features.
 
 5. Apply StandardScaler() on "Location","Latitude", and "Longitude" features.
 
