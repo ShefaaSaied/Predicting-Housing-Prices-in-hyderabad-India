@@ -35,7 +35,8 @@ Finally, drop all amenities columns and keep 'Luxury' column only.
 1. Removing outliers from 'Price' above and below 3.5IQR and from 'Area' by thresholding (keep values <= 6000).
 
 2. I tried dropping 'Location' feature after extracting longitude & latitude as a substitute for it, but, keeping it increases model performance.\
-In the task, CatBoostEncoder() gave the highest performance out of all encoding techniques.\ 
+In the task, CatBoostEncoder() gave the highest performance out of all encoding techniques.
+
     **Note:** CatBoostEncoder() is a target-based categorical encoder but also involves an ordering principle in order to overcome this problem of target leakage.
 
 3. Apply log transform to 'Area' for scaling and overcoming the sckewness.
