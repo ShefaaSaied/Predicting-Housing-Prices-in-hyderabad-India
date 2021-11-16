@@ -4,8 +4,8 @@ The challenge in this project was to use only linear/polynomial regression model
 
 The dataset used in this project is obtained from [Kaggle - Housing Prices in Metropolitan Areas of India](https://www.kaggle.com/ruchi798/housing-prices-in-metropolitan-areas-of-india)\
 The dataset includes:\
-Collection of prices of new and resale houses located in the metropolitan areas of India.\
-The amenities provided for each house.
+- Collection of prices of new and resale houses located in the metropolitan areas of India.\
+- The amenities provided for each house.
 
 **In this project I worked only on 'Hyderabad.csv'.** 
 
